@@ -87,14 +87,20 @@ class ItemCard extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                  onPressed: () => onDetails(item.name),
-                  child: Text('Details'),
-                ),
-                ElevatedButton(
-                  onPressed: () => onAdd(item),
-                  child: Text(item.isAdded ? 'Added' : 'Add'),
-                ),
+                SizedBox(
+                          width: double.infinity, 
+                          child: ElevatedButton.icon(
+                            onPressed: () => onDetails(item.name),
+                            label: Text('Details'),
+                          ),
+                        ),
+                SizedBox(
+                          width: double.infinity, 
+                          child: ElevatedButton.icon(
+                            onPressed: () => onAdd(item),
+                            label: Text(item.isAdded ? 'Added' : 'Add'),
+                          ),
+                        ),
               ],
             ),
           ],
